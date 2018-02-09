@@ -1,1 +1,8 @@
-./vs
+.vs/
+packages/
+Common/bin/
+Common/obj/
+FacialDetectionAgent/bin/
+FacialDetectionAgent/obj/
+FacialDetectionPlugin/bin/
+FacialDetectionPlugin/obj/
