@@ -265,7 +265,8 @@
     <Error Condition="!Exists('..\packages\EMGU.CV.3.3.0.2824\build\Emgu.CV.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EMGU.CV.3.3.0.2824\build\Emgu.CV.targets'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>Copy /Y "$(SolutionDir)External\VxSdk-2.0\x64\cpprest140_2_9.dll" "$(TargetDir)"
+    <PostBuildEvent>Copy /Y "$(ProjectDir)Config\haarcascade*.xml" "$(TargetDir)"
+Copy /Y "$(SolutionDir)External\VxSdk-2.0\x64\cpprest140_2_9.dll" "$(TargetDir)"
 Copy /Y "$(SolutionDir)External\VxSdk-2.0\x64\VxSdk.dll" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
