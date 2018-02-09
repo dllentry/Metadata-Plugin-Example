@@ -15,6 +15,7 @@ using System;
 using System.Windows;
 using Microsoft.Practices.Unity;
 using Prism.Unity;
+using FacialDetectionCommon.Serenity;
 
 namespace FacialDetectionAgent
 {
@@ -51,7 +52,9 @@ namespace FacialDetectionAgent
             Container.RegisterInstance(sessionMgr);
             Container.RegisterInstance(rtspServer);
             Container.RegisterInstance(httpServer);
+            Container.RegisterInstance<IDetectionSourceManager>(sourceMgr);
             Container.RegisterType<IDataSourcesManager, DataSourcesManager>(new ContainerControlledLifetimeManager());
+            Container.RegisterInstance<ISerenityService>(new SerenityService(), new ContainerControlledLifetimeManager());
         }
 
         protected override DependencyObject CreateShell()

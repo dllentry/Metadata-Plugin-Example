@@ -103,7 +103,7 @@ namespace FacialDetectionAgent
             }
             catch (Exception e)
             {
-                LOG.Error(e, "Caught exception starting facial detection agent");
+                LOG.Error($"Caught exception starting facial detection agent, msg={e.Message}");
                 return false;
             }
 
