@@ -95,16 +95,13 @@ namespace FacialDetection
             // will create the canvas on the UI thread send an event to pass it along
             // to any active metadata pipelines so that metadata can be annotated ontop
             // of the video stream.
-            //return Application.Current.Dispatcher.Invoke(() =>
-            //{
-                var canvas = new DrawingCanvas(_eventAgg);
+            var canvas = new DrawingCanvas(_eventAgg);
 
-                // Send to active metadata pipelines.
-                _eventAgg.GetEvent<CanvasSinkCreatedEvent>().Publish(canvas);
+            // Send to active metadata pipelines.
+            _eventAgg.GetEvent<CanvasSinkCreatedEvent>().Publish(canvas);
 
-                // Return the actual FrameworkElement to the OpsCenter.
-                return canvas.GetVisualOverlay();
-            //});
+            // Return the actual FrameworkElement to the OpsCenter.
+            return canvas.GetVisualOverlay();
         }
 
         public void OnVideoViewStreamAspectRatio(double aspectRatio)
